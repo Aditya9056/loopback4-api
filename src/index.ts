@@ -1,9 +1,9 @@
-import {ApplicationConfig, TestApiApplication} from './application';
+import {ApplicationConfig, MyAppApplication} from './application';
 
 export * from './application';
 
 export async function main(options: ApplicationConfig = {}) {
-  const app = new TestApiApplication(options);
+  const app = new MyAppApplication(options);
   await app.boot();
   await app.start();
 

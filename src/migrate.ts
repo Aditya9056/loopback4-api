@@ -1,10 +1,10 @@
-import {TestApiApplication} from './application';
+import {MyAppApplication} from './application';
 
 export async function migrate(args: string[]) {
   const existingSchema = args.includes('--rebuild') ? 'drop' : 'alter';
   console.log('Migrating schemas (%s existing schema)', existingSchema);
 
-  const app = new TestApiApplication();
+  const app = new MyAppApplication();
   await app.boot();
   await app.migrateSchema({existingSchema});
 

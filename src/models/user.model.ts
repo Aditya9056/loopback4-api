@@ -1,7 +1,7 @@
 import {Entity, model, property} from '@loopback/repository';
 
 @model()
-export class Todo extends Entity {
+export class User extends Entity {
   @property({
     type: 'number',
     id: true,
@@ -13,22 +13,22 @@ export class Todo extends Entity {
     type: 'string',
     required: true,
   })
-  title: string;
+  name: string;
 
   @property({
-    type: 'boolean',
+    type: 'string',
     required: true,
   })
-  completed: boolean;
+  email: string;
 
 
-  constructor(data?: Partial<Todo>) {
+  constructor(data?: Partial<User>) {
     super(data);
   }
 }
 
-export interface TodoRelations {
+export interface UserRelations {
   // describe navigational properties here
 }
 
-export type TodoWithRelations = Todo & TodoRelations;
+export type UserWithRelations = User & UserRelations;
